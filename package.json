@@ -1,0 +1,33 @@
+{
+  "name": "vue-mg-markdown-editor",
+  "version": "0.1.0",
+  "description": "明宇用的vue下的markdown编辑器",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imingyu/vue-mg-markdown-editor.git"
+  },
+  "keywords": [
+    "vue",
+    "markdown",
+    "editor",
+    "markdown-editor",
+    "vue-markdown"
+  ],
+  "author": "Mingyu <mignyuhisoft@163.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/imingyu/vue-mg-markdown-editor/issues"
+  },
+  "homepage": "https://github.com/imingyu/vue-mg-markdown-editor#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  },
+  "dependencies": {
+    "markdown-it": "^8.3.1"
+  }
+}
