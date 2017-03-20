@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>示例</title>
     <link rel="stylesheet" href="../dist/mg-markdown-editor.css">
+    <link href="http://cdn.bootcss.com/Buttons/2.0.0/css/buttons.css" rel="stylesheet">
+    <link rel="stylesheet" href="./fontello/css/fontello.css">
     <style>
         * {
             margin: 0;
@@ -17,7 +19,7 @@
         
         #app {
             width: 80%;
-            margin: 40px auto;
+            margin: 10px auto;
         }
         
         body {
@@ -25,25 +27,44 @@
             color: #333;
             font-family: 微软雅黑;
         }
+        
+        .action-bar {
+            margin-bottom: 15px;
+        }
     </style>
 </head>
 
 <body>
     <div id="app">
+        <div class="action-bar">
+            <button @click="togglePreview" type="button" :class="['button button-3d', editorOptions.preview ? 'button-caution' : 'button-action']">{{editorOptions.preview ? '禁用' : '启用'}}预览</button>
+        </div>
         <mg-markdown-editor :options="editorOptions"></mg-markdown-editor>
     </div>
     <script src="../node_modules/vue/dist/vue.js"></script>
     <script src="../node_modules/markdown-it/dist/markdown-it.js"></script>
     <script src="../dist/mg-markdown-editor.js"></script>
     <script>
-        var mk=new markdownit();
+        var mk = new markdownit();
         var vm = new Vue({
             el: "#app",
             data: {
                 editorOptions: {
+                    preview: true,
                     parser: function (markdownStr) {
                         return mk.render(markdownStr);
+                    },
+                    menus:{
+                        bold:{
+                            className:"fontello-ic ic-bold",
+                            title:"粗体"
+                        }
                     }
+                }
+            },
+            methods: {
+                togglePreview() {
+                    this.editorOptions.preview = !this.editorOptions.preview;
                 }
             }
         });

@@ -24,6 +24,28 @@ var defaultOptions = {
     }
 };
 
+var actionList = {
+    menu: {
+        bold: {
+            className: '',
+            title: "粗体",
+            handler: function handler(selectContent) {}
+        },
+        alignLeft: {
+            className: "",
+            title: "左对齐"
+        },
+        alignRight: {
+            className: "",
+            title: "右对齐"
+        },
+        alignCenter: {
+            className: "",
+            title: "居中对齐"
+        }
+    }
+};
+
 var plugin = {
     install: function install(Vue, options) {
         //修改默认配置
@@ -40,8 +62,13 @@ var plugin = {
             Vue.util.extend(defaultOptions, ops);
         };
 
+        //像编辑器注册功能
+        Vue.MgMarkdownEditor.registerAction = function (actionOptions) {}
+        //menu:handler($event, editor)
+
+
         //定义全局组件
-        Vue.component('mg-markdown-editor', _index2.default);
+        ;Vue.component('mg-markdown-editor', _index2.default);
     }
 };
 if ((typeof window === 'undefined' ? 'undefined' : _typeof(window)) === 'object' && window.Vue) {
@@ -73,23 +100,45 @@ exports.default = {
     data: function data() {
         return {
             ops: {},
-            content: ""
+            content: "",
+            actions: {
+                bold: {
+                    className: '',
+                    title: "粗体"
+                },
+                alignLeft: {
+                    className: "",
+                    title: "左对齐"
+                },
+                alignRight: {
+                    className: "",
+                    title: "右对齐"
+                },
+                alignCenter: {
+                    className: "",
+                    title: "居中对齐"
+                }
+            }
         };
     },
     watch: {
         options: function options(val) {
-            this.setOptions(this.transformOptions(val));
+            var ops = this.transformOptions(val);
+            this.setOptions(ops);
+        },
+
+        'options.preview': function optionsPreview(val) {
+            this.ops.preview = val;
         }
     },
     computed: {
         renderResult: function renderResult() {
-            var parser = this.ops.parser;
-            if (!parser || typeof parser !== 'function') {
-                parser = Vue.MgMarkdownEditor.getDefaultOptions().parser;
+            console.log('rending...');
+            if (this.ops.preview) {
+                return this.renderMarkdown();
+            } else {
+                return '';
             }
-            var result = parser(this.content);
-            console.log('rendering...');
-            return result;
         }
     },
     methods: {
@@ -103,6 +152,14 @@ exports.default = {
             var defaultOptions = Vue.MgMarkdownEditor.getDefaultOptions();
             Vue.util.extend(defaultOptions, ops || {});
             return defaultOptions;
+        },
+        renderMarkdown: function renderMarkdown() {
+            var parser = this.ops.parser;
+            if (!parser || typeof parser !== 'function') {
+                parser = Vue.MgMarkdownEditor.getDefaultOptions().parser;
+            }
+            var result = parser(this.content);
+            return result;
         }
     },
     created: function created() {
@@ -112,8 +169,8 @@ exports.default = {
 })()
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"mg-markdown-editor"},[_c('div',{staticClass:"menu-bar"}),_vm._v(" "),_c('div',{staticClass:"main-container"},[_c('div',{staticClass:"editor-container"},[_c('textarea',{directives:[{name:"model",rawName:"v-model",value:(_vm.content),expression:"content"}],staticClass:"editor",domProps:{"value":(_vm.content)},on:{"input":function($event){if($event.target.composing){ return; }_vm.content=$event.target.value}}})]),_vm._v(" "),(_vm.ops.preview)?_c('div',{staticClass:"preview-container"},[_c('div',{staticClass:"preview-content",domProps:{"innerHTML":_vm._s(_vm.renderResult)}})]):_vm._e(),_vm._v(" "),(_vm.ops.resizeHorizontal)?_c('div',{staticClass:"resize-handle resize-horizontal"}):_vm._e(),_vm._v(" "),(_vm.ops.resizeVertical)?_c('div',{staticClass:"resize-handle resize-vertical"}):_vm._e()])])}
-__vue__options__.staticRenderFns = []
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:{'mg-markdown-editor':true, 'open-preview':_vm.ops.preview}},[_vm._m(0),_vm._v(" "),_c('div',{staticClass:"main-container"},[_c('div',{staticClass:"editor-container"},[_c('textarea',{directives:[{name:"model",rawName:"v-model",value:(_vm.content),expression:"content"}],ref:"input",staticClass:"editor",domProps:{"value":(_vm.content)},on:{"input":function($event){if($event.target.composing){ return; }_vm.content=$event.target.value}}})]),_vm._v(" "),(_vm.ops.preview)?_c('div',{staticClass:"preview-container"},[_c('div',{staticClass:"preview-content",domProps:{"innerHTML":_vm._s(_vm.renderResult)}})]):_vm._e(),_vm._v(" "),(_vm.ops.resizeHorizontal && _vm.ops.preview)?_c('div',{staticClass:"resize-handle resize-horizontal"}):_vm._e(),_vm._v(" "),(_vm.ops.resizeVertical)?_c('div',{staticClass:"resize-handle resize-vertical"}):_vm._e()])])}
+__vue__options__.staticRenderFns = [function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"menu-bar"},[_c('ul',{staticClass:"menu-list"},[_c('li',{staticClass:"menu-item"})])])}]
 
 },{"./util.js":3}],3:[function(require,module,exports){
 "use strict";

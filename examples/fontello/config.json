@@ -1,0 +1,370 @@
+{
+  "name": "",
+  "css_prefix_text": "ic-",
+  "css_use_suffix": false,
+  "hinting": true,
+  "units_per_em": 1000,
+  "ascent": 850,
+  "glyphs": [
+    {
+      "uid": "cc1de8eafc95f6faffcd8683aa8e9aa1",
+      "css": "bold",
+      "code": 59392,
+      "src": "elusive"
+    },
+    {
+      "uid": "d88a8035fea40c4d6b934d788c2f5251",
+      "css": "italic",
+      "code": 59393,
+      "src": "elusive"
+    },
+    {
+      "uid": "7c8ccee198bdf2ba9f36c884a6c1cd95",
+      "css": "text-height",
+      "code": 59394,
+      "src": "elusive"
+    },
+    {
+      "uid": "dbcb2495fc2b934b13ac6992e0429e2f",
+      "css": "text-width",
+      "code": 59395,
+      "src": "elusive"
+    },
+    {
+      "uid": "3c4b20e86f774f150402354b9cfeb95b",
+      "css": "align-center",
+      "code": 59396,
+      "src": "elusive"
+    },
+    {
+      "uid": "4d622484db3311a1a7322aae6b253984",
+      "css": "align-right",
+      "code": 59397,
+      "src": "elusive"
+    },
+    {
+      "uid": "55f7ab3f2bedec72e8400fa2798a7a1a",
+      "css": "align-justify",
+      "code": 59398,
+      "src": "elusive"
+    },
+    {
+      "uid": "cd9ad52ef0740bb86ff11af9646d4859",
+      "css": "list",
+      "code": 59399,
+      "src": "elusive"
+    },
+    {
+      "uid": "2a6cc3252195b53ed77ad3bdd73391b3",
+      "css": "indent-left",
+      "code": 59400,
+      "src": "elusive"
+    },
+    {
+      "uid": "9efefb69aea6de9c20e56405a6aa2fd2",
+      "css": "indent-right",
+      "code": 59401,
+      "src": "elusive"
+    },
+    {
+      "uid": "3a3b33acd5fe66d84ff303baf9d8efa8",
+      "css": "align-left",
+      "code": 59402,
+      "src": "elusive"
+    },
+    {
+      "uid": "57776e51a50e3b4d92701bdbbba01588",
+      "css": "resize-full",
+      "code": 59403,
+      "src": "elusive"
+    },
+    {
+      "uid": "8c7e34dcc8cc90ed5f4fd59949201f41",
+      "css": "resize-small",
+      "code": 59404,
+      "src": "elusive"
+    },
+    {
+      "uid": "6079b9663aede6ed5882db16bb04da3b",
+      "css": "up-circled",
+      "code": 59405,
+      "src": "elusive"
+    },
+    {
+      "uid": "6083c8aa5e3345476a24a28ac1afaa61",
+      "css": "cog",
+      "code": 59406,
+      "src": "elusive"
+    },
+    {
+      "uid": "e1a8092efb690eeb6c41d58b549e9074",
+      "css": "wrench-circled",
+      "code": 59407,
+      "src": "elusive"
+    },
+    {
+      "uid": "cde79a37774e5817bc68fff2464aee28",
+      "css": "wrench",
+      "code": 59408,
+      "src": "elusive"
+    },
+    {
+      "uid": "64abb7c56aefca89046bb69f7251d2e2",
+      "css": "calendar",
+      "code": 59409,
+      "src": "elusive"
+    },
+    {
+      "uid": "34e5d8943b23023d2a9515cfa9173506",
+      "css": "quote",
+      "code": 59410,
+      "src": "elusive"
+    },
+    {
+      "uid": "310c0c174fb8843a83ad0a7c6da85c56",
+      "css": "briefcase",
+      "code": 59411,
+      "src": "elusive"
+    },
+    {
+      "uid": "1e394b6cd5e0da3e10d8e4f3fe355960",
+      "css": "adult",
+      "code": 59412,
+      "src": "elusive"
+    },
+    {
+      "uid": "5e5a88921aa39b292bdd56c3b9c923d3",
+      "css": "gift",
+      "code": 59413,
+      "src": "elusive"
+    },
+    {
+      "uid": "dc73bee1d58539abe8c96b958bf4c931",
+      "css": "fire",
+      "code": 59414,
+      "src": "elusive"
+    },
+    {
+      "uid": "990d39e5b7e9750c55d2593b1cc61a0a",
+      "css": "youtube",
+      "code": 59415,
+      "src": "elusive"
+    },
+    {
+      "uid": "2e3c51fc718aeb8b01604c8d039bcaeb",
+      "css": "block",
+      "code": 59416,
+      "src": "elusive"
+    },
+    {
+      "uid": "0464d6f35a7fe587434173f42ddace88",
+      "css": "thumbs-up",
+      "code": 59417,
+      "src": "elusive"
+    },
+    {
+      "uid": "3849753858193b4d6e07afa834aff979",
+      "css": "thumbs-down",
+      "code": 59418,
+      "src": "elusive"
+    },
+    {
+      "uid": "3e31c5e1720a1545c5024a1796d74e5b",
+      "css": "export",
+      "code": 59419,
+      "src": "elusive"
+    },
+    {
+      "uid": "62b0580ee8edc3a3edfbf68a47c852d5",
+      "css": "pencil",
+      "code": 59420,
+      "src": "elusive"
+    },
+    {
+      "uid": "9e0404ba55575a540164db9a5ad511df",
+      "css": "doc-new",
+      "code": 59421,
+      "src": "elusive"
+    },
+    {
+      "uid": "7b6c617d6d1e3f22db493839f0483bf6",
+      "css": "edit",
+      "code": 59422,
+      "src": "elusive"
+    },
+    {
+      "uid": "24a1eb628343fabd6f46a0a13456c045",
+      "css": "print",
+      "code": 59423,
+      "src": "elusive"
+    },
+    {
+      "uid": "f84e243b91683403debed23b950f7efb",
+      "css": "bell",
+      "code": 59424,
+      "src": "elusive"
+    },
+    {
+      "uid": "23710230c21b4af140947e3604cc67a5",
+      "css": "comment",
+      "code": 59425,
+      "src": "elusive"
+    },
+    {
+      "uid": "afdb6de29702e88d79539d600c42d4a8",
+      "css": "comment-alt",
+      "code": 59426,
+      "src": "elusive"
+    },
+    {
+      "uid": "3fe5b810589a16bc691e3e979b2789dc",
+      "css": "warning",
+      "code": 59427,
+      "src": "elusive"
+    },
+    {
+      "uid": "c91098f07ff0df45b3f8666b72b75801",
+      "css": "phone",
+      "code": 59428,
+      "src": "elusive"
+    },
+    {
+      "uid": "3a9aa648fce45a316e70e1613bda57ac",
+      "css": "folder-close",
+      "code": 59429,
+      "src": "elusive"
+    },
+    {
+      "uid": "df09e8471b1f0ffb10db52d28dd8104d",
+      "css": "folder-open",
+      "code": 59430,
+      "src": "elusive"
+    },
+    {
+      "uid": "3ab2abf6f936d3e53ee8c184cedaed82",
+      "css": "trash",
+      "code": 59431,
+      "src": "elusive"
+    },
+    {
+      "uid": "d8579082214a1c550b5d1ab2fee8b02c",
+      "css": "compass",
+      "code": 59432,
+      "src": "elusive"
+    },
+    {
+      "uid": "22cfc7af2c4f158b37317c65c92b48c2",
+      "css": "location",
+      "code": 59433,
+      "src": "elusive"
+    },
+    {
+      "uid": "8489d61496923b1159b01d8a0a7b2df0",
+      "css": "volume-off",
+      "code": 59434,
+      "src": "elusive"
+    },
+    {
+      "uid": "5d9730dc93976d27eb07914eab50a507",
+      "css": "volume-down",
+      "code": 59435,
+      "src": "elusive"
+    },
+    {
+      "uid": "b59b3b618699b467541f631edd5a02ed",
+      "css": "volume",
+      "code": 59436,
+      "src": "elusive"
+    },
+    {
+      "uid": "012ff5762ccb18c16bdfdd6baf187406",
+      "css": "volume-up",
+      "code": 59437,
+      "src": "elusive"
+    },
+    {
+      "uid": "599d6c088f4a1c64611b989459d65f6b",
+      "css": "lightbulb",
+      "code": 59438,
+      "src": "elusive"
+    },
+    {
+      "uid": "a79ef2d6f102af86440aa80238d5f4b0",
+      "css": "down",
+      "code": 59439,
+      "src": "elusive"
+    },
+    {
+      "uid": "1b2ef17b42012a1e46743f9be8384f83",
+      "css": "left",
+      "code": 59440,
+      "src": "elusive"
+    },
+    {
+      "uid": "23012c4e68769e1f133bba1f93a734d1",
+      "css": "right",
+      "code": 59441,
+      "src": "elusive"
+    },
+    {
+      "uid": "cbb11c546600a92fde108476faf5d337",
+      "css": "up",
+      "code": 59442,
+      "src": "elusive"
+    },
+    {
+      "uid": "b91c0e6aaab5e3146732b69dd418e120",
+      "css": "up-open",
+      "code": 59443,
+      "src": "elusive"
+    },
+    {
+      "uid": "dc4a03854ef986d64565143bea4241aa",
+      "css": "right-open",
+      "code": 59444,
+      "src": "elusive"
+    },
+    {
+      "uid": "c0a07aca383ff2a164a4d691fa46e35c",
+      "css": "left-open",
+      "code": 59445,
+      "src": "elusive"
+    },
+    {
+      "uid": "616b755d0f4c7d2dc7a1dcc2e5427039",
+      "css": "down-open",
+      "code": 59446,
+      "src": "elusive"
+    },
+    {
+      "uid": "295287b96e50d494ba38a1ed9e06d8db",
+      "css": "zoom-out",
+      "code": 59447,
+      "src": "elusive"
+    },
+    {
+      "uid": "68c7be0f4cab6b82d5725b1ba7cec4d6",
+      "css": "zoom-in",
+      "code": 59448,
+      "src": "elusive"
+    },
+    {
+      "uid": "d5fabfa46384953ae055fceacb2229a7",
+      "css": "arrows-cw",
+      "code": 59449,
+      "src": "elusive"
+    },
+    {
+      "uid": "2c26914ed707706773028b28e8aa5bd6",
+      "css": "fontsize",
+      "code": 59450,
+      "src": "elusive"
+    },
+    {
+      "uid": "3cdeca193a3d47ef93a4b45f5d88ba0c",
+      "css": "font",
+      "code": 59451,
+      "src": "elusive"
+    }
+  ]
+}
