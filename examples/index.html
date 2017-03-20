@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>示例</title>
+    <link rel="stylesheet" href="../dist/mg-markdown-editor.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 微软雅黑;
+        }
+        
+        #app {
+            width: 80%;
+            margin: 40px auto;
+        }
+        
+        body {
+            background: #f3f3f3;
+            color: #333;
+            font-family: 微软雅黑;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <mg-markdown-editor :options="editorOptions"></mg-markdown-editor>
+    </div>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script src="../node_modules/markdown-it/dist/markdown-it.js"></script>
+    <script src="../dist/mg-markdown-editor.js"></script>
+    <script>
+        var mk=new markdownit();
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                editorOptions: {
+                    parser: function (markdownStr) {
+                        return mk.render(markdownStr);
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
