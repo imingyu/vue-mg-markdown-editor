@@ -1,23 +1,43 @@
 <template>
     <div :class="{'mg-markdown-editor':true, 'open-preview':ops.preview}">
         <div class="menu-bar">
-            <ul class="menu-list">
-                <li class="menu-item"></li>
-            </ul>
+            <div :class="['menu-item','name-'+menuName]"
+                 v-for="(menuOps, menuName) in ops.menus"
+                 v-if="menuOps.visable!==false">
+                <button :class="[menuOps.className?menuOps.className:'']"
+                        :disabled="menuOps.enabled===false"
+                        :title="menuOps.title"
+                        @click="clickMenu($event, menuName, menuOps)"
+                        type="button"></button>
+            </div>
+            <div class="custom-menu"
+                 slot="menus"></div>
         </div>
         <div class="main-container">
             <div class="editor-container">
-                <textarea ref="input" v-model="content" class="editor"></textarea>
+                <textarea ref="input"
+                          v-model="content"
+                          class="editor"></textarea>
             </div>
             <div v-if="ops.preview"
                  class="preview-container">
+                <div class="preview-before"
+                     slot="previewBefore"></div>
                 <div class="preview-content"
                      v-html="renderResult"></div>
+                <div class="preview-after"
+                     slot="previewAfter"></div>
             </div>
             <div v-if="ops.resizeHorizontal && ops.preview"
-                 class="resize-handle resize-horizontal"></div>
+                 class="resize-handle resize-horizontal">
+                <div class="custom-horizontal"
+                     slot="resizeHorizontal"></div>
+            </div>
             <div v-if="ops.resizeVertical"
-                 class="resize-handle resize-vertical"></div>
+                 class="resize-handle resize-vertical">
+                <div class="custom-vertical"
+                     slot="resizeVertical"></div>
+            </div>
         </div>
     </div>
 </template>
@@ -34,25 +54,7 @@ export default {
     data: function () {
         return {
             ops: {},
-            content: "",
-            actions:{
-                bold:{
-                    className:'',
-                    title:"粗体"
-                },
-                alignLeft:{
-                    className:"",
-                    title:"左对齐"
-                },
-                alignRight:{
-                    className:"",
-                    title:"右对齐"
-                },
-                alignCenter:{
-                    className:"",
-                    title:"居中对齐"
-                }
-            }
+            content: ""
         }
     },
     watch: {
@@ -93,6 +95,19 @@ export default {
             }
             var result = parser(this.content);
             return result;
+        },
+        execAction(actionName, args) {
+            args = args || [];
+            return Vue.MgMarkdownEditor.execAction(actionName, [this.$refs.input, util].concat(args), this);
+        },
+        clickMenu($event, menuName, menuOps) {
+            if (!menuOps.action) {
+                console.warn(`[MgMarkdownEditor warn]未找到与${menuName}菜单对应的功能`);
+            } else {
+                this.execAction(menuOps.action, menuOps);
+            }
+
+            this.$emit($event, menuName, menuOps)
         }
     },
     created() {
@@ -111,19 +126,17 @@ export default {
     * {
         box-sizing: border-box;
     }
-
-    &.open-preview{
-        .editor-container{
+    &.open-preview {
+        .editor-container {
             width: 50%;
         }
-        .preview-container{
+        .preview-container {
             display: block;
         }
-        .editor{
+        .editor {
             border-bottom-right-radius: 0;
         }
     }
-
     .main-container {
         position: relative;
         z-index: 50;
@@ -139,10 +152,31 @@ export default {
     }
     .menu-bar {
         background: #fff;
-        min-height: 30px;
+        height: 30px;
         border-bottom: 1px solid @clr-border;
         border-top-left-radius: @size-radius;
         border-top-right-radius: @size-radius;
+        .menu-item {
+            display: inline-block;
+            margin-left: 5px;
+            height: 100%;
+            button {
+                box-shadow: none;
+                background: none;
+                outline: none;
+                border: none;
+                border-radius: 0;
+                height: 100%;
+                padding: 2px 5px;
+                cursor: pointer;
+                &:hover {
+                    background: #f6f6f6;
+                }
+                &[disabled] {
+                    cursor: no-drop;
+                }
+            }
+        }
     }
     .editor {
         border: none;
